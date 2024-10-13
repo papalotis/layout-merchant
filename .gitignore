@@ -1,0 +1,11 @@
+.venv/
+
+convert_lyt.ipynb
+
+read_lyt.py
+
+tracks_to_keep.txt
+
+t.json
+
+__pycache__/
