@@ -40,7 +40,7 @@ def visualize_cones(path: Path):
         )
 
     # visualize the timing line
-    heading_angle = np.deg2rad(data["timing_line_oritenation"]) + np.pi / 2
+    heading_angle = np.deg2rad(data["timing_line_orientation"]) + np.pi / 2
     heading = np.array([np.cos(heading_angle), np.sin(heading_angle)])
 
     width = data["timing_line_width"]
