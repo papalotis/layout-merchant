@@ -24,7 +24,7 @@ def visualize_cones(path: Path):
 
     if "start_orientation" in data:
 
-        heading_rad = np.deg2rad(data["start_oritenation"])
+        heading_rad = np.deg2rad(data["start_orientation"])
 
         n = 3
 
