@@ -1,13 +1,17 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "matplotlib",
+#     "numpy",
+#     "typer",
+# ]
+# ///
 import json
 from pathlib import Path
 
-try:
-    import matplotlib.pyplot as plt
-except ImportError:
-    print("Matplotlib not found. Please install it to visualize the track.")
-    raise SystemExit(1)
-
-import numpy as np  # matplotlib depends on numpy so if we have matplotlib we have numpy
+import matplotlib.pyplot as plt
+import numpy as np
+import typer
 
 INDEX_TO_COLOR = ["black", "gold", "blue", "orange", "red"]
 
@@ -23,7 +27,6 @@ def visualize_cones(path: Path):
     _, ax = plt.subplots()
 
     if "start_orientation" in data:
-
         heading_rad = np.deg2rad(data["start_orientation"])
 
         n = 3
@@ -63,11 +66,10 @@ def visualize_cones(path: Path):
     plt.show()
 
 
+def main(path: Path):
+    """Visualize a track from the repository."""
+    visualize_cones(path)
+
+
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("path", type=Path, help="Path to the json file.")
-    args = parser.parse_args()
-
-    visualize_cones(args.path)
+    typer.run(main)
