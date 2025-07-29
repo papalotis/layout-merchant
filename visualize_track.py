@@ -22,20 +22,22 @@ def visualize_cones(path: Path):
 
     _, ax = plt.subplots()
 
-    heading_rad = np.deg2rad(data["start_oritenation"])
+    if "start_orientation" in data:
 
-    n = 3
+        heading_rad = np.deg2rad(data["start_oritenation"])
 
-    ax.arrow(
-        data["start_position"][0],
-        data["start_position"][1],
-        np.cos(heading_rad) * n,
-        np.sin(heading_rad) * n,
-        head_width=1.5,
-        head_length=1,
-        fc="k",
-        ec="k",
-    )
+        n = 3
+
+        ax.arrow(
+            data["start_position"][0],
+            data["start_position"][1],
+            np.cos(heading_rad) * n,
+            np.sin(heading_rad) * n,
+            head_width=1.5,
+            head_length=1,
+            fc="k",
+            ec="k",
+        )
 
     # visualize the timing line
     heading_angle = np.deg2rad(data["timing_line_oritenation"]) + np.pi / 2
