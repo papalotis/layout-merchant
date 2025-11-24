@@ -33,10 +33,10 @@ def visualize_cones(path: Path):
         path: Path to the JSON file containing the track layout data. The file must
             contain keys: 'x', 'y', 'color', 'start_position', 'start_orientation',
             'timing_line_position', 'timing_line_orientation', and 'timing_line_width'.
-    
+
     Returns:
         None. Displays the plot using matplotlib.pyplot.show().
-    
+
     Note:
         Cone colors are mapped as follows:
         0: unknown (black), 1: yellow (gold), 2: blue, 3: orange_small (orange),
@@ -93,7 +93,7 @@ def visualize_cones(path: Path):
 
 def main(path: Path):
     """Visualize a track from the repository.
-    
+
     Entry point for the command-line interface to visualize Formula Student
     Driverless track layouts.
 
