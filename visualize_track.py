@@ -92,14 +92,7 @@ def visualize_cones(path: Path):
 
 
 def main(path: Path):
-    """Visualize a track from the repository.
-
-    Entry point for the command-line interface to visualize Formula Student
-    Driverless track layouts.
-
-    Args:
-        path: Path to the JSON file containing the track layout to visualize.
-    """
+    """Visualize a track from the repository."""
     visualize_cones(path)
 
 
